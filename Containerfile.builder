@@ -47,7 +47,8 @@ COPY --chmod=555 build.sh /usr/local/bin/build-ceph.sh
 
 FROM sccache as cmake
 WORKDIR /ceph
-ENV ARGS="-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+ENV CMAKE_ARGS="-DCMAKE_BUILD_TYPE=RelWithDebInfo"
 ENV SCCACHE_CONF=/etc/sccache.conf
 ENV SCCACHE_ERROR_LOG=/ceph/sccache.log
+ENV AWS_PROFILE="default"
 CMD /usr/local/bin/build-ceph.sh
