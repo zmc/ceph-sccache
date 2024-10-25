@@ -8,7 +8,9 @@ RUN \
     glibc-langpack-en \
     java-1.8.0-openjdk-headless \
     jq \
-    sudo && \
+    rpm-build \
+    sudo \
+    wget && \
   dnf install -y \
     epel-release && \
   dnf clean packages
